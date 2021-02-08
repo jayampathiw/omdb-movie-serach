@@ -1,0 +1,42 @@
+<ng-container *ngIf="movies && movies.length > 0; else noDataContainer">
+  <div class="parent">
+    <div
+      *ngFor="let movie of movies"
+      class="section"
+      [ngClass]="{
+        'long-section': selectedMovie && selectedMovie.imdbID == movie.imdbID
+      }"
+    >
+      <img [src]="movie.Poster" alt="No Image" />
+      <div class="details">
+        <header>
+          {{ movie.Title }}
+        </header>
+        <section *ngIf="selectedMovie && selectedMovie.imdbID == movie.imdbID">
+          <p class="title">Plot</p>
+          <p>{{ movie.Plot }}</p>
+          <p class="title">Actors</p>
+          <p>{{ movie.Actors }}</p>
+          <p class="title">Rating</p>
+          <ul>
+            <li *ngFor="let rate of movie.Ratings">
+              <p>{{ rate.Source }} {{ rate.Value }}</p>
+            </li>
+          </ul>
+        </section>
+        <footer>
+          <p>{{ movie.Year }}</p>
+          <button
+            *ngIf="!(selectedMovie && selectedMovie.imdbID == movie.imdbID)"
+            (click)="setSelectedMovie(movie.imdbID)"
+          >
+            Details
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #noDataContainer>
+  <div class="error">Movie not found!</div>
+</ng-template>

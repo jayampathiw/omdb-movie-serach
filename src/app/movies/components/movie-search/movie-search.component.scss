@@ -1,0 +1,24 @@
+@import './../../../../styles.scss';
+
+.headder-content {
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    @include font-main-title;
+  }
+  .search {
+    display: flex;
+    p {
+      @include font-paragraph;
+      margin-top: 19px;
+    }
+    input {
+      margin: 16px 0 16px 4px;
+      height: 16px;
+    }
+    button {
+      @include m-button;
+      margin: 16px 0 16px 4px;
+    }
+  }
+}

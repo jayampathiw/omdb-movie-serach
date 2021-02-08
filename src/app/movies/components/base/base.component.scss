@@ -1,0 +1,17 @@
+@import './../../../../styles.scss';
+
+.main {
+  .headder-item{
+    @include item-align-center;
+    box-shadow: inset 0px 12px 0px -10px #ccc, inset 4px -12px 8px -10px #ccc;
+    header{
+      width: $parent-item-widths;
+    }
+  }
+  .container {
+    @include item-align-center;
+    app-movie-details {
+      width: $parent-item-widths;
+    }
+  }
+}

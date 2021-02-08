@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "movie-serach"
+    }
+  },
+  "defaultProject": "movie-serach",
+  "cli": {
+    "analytics": "a3f4ce08-35dc-43ca-913a-1b2034815b0f"
+  }
 }

@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+$parent-item-widths: clamp(50ch, 50%, 100ch);
+$button-backgroud-color: #307cfb;
+$button-text-color: #ffffff;
+
+@mixin font-main-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@mixin font-sub-title {
+  font-size: .75rem;
+  font-weight: normal;
+}
+
+@mixin font-small-title {
+  font-size: .6rem;
+  font-weight: bold;
+}
+
+@mixin font-paragraph {
+  font-size: .7rem;
+  font-weight: normal;
+}
+
+@mixin font-button-text {
+  font-size: 0.45rem;
+  font-weight: bold;
+}
+
+@mixin item-align-center {
+  display: grid;
+  place-items: center;
+}
+
+@mixin three-column-layout {
+  display: grid;
+  grid-template-columns: auto 1f auto;
+}
+
+@mixin m-button {
+  @include font-button-text;
+  background-color: $button-backgroud-color;
+  color: $button-text-color;
+  text-transform: uppercase;
+  border: none;
+  outline:none;
+  height: 22px;
+}
+
+

@@ -1,0 +1,20 @@
+<div class="main">
+
+  <div class="headder-item">
+    <header>
+      <app-movie-search (movieSearch)="movieSearch($event)"></app-movie-search>
+    </header>
+  </div>
+
+
+  <div class="container">
+    <ng-container *ngIf="movies | async as results">
+      <app-movie-details
+        [movies]="results.Search"
+        [selectedMovie]="selectedMovie | async"
+        (selectedImdbEmmiter)="searchByIMDB($event)"
+      ></app-movie-details>
+    </ng-container>
+  </div>
+</div>
+
