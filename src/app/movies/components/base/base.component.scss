@@ -10,6 +10,7 @@
   }
   .container {
     @include item-align-center;
+    padding-top: 16px;
     app-movie-details {
       width: $parent-item-widths;
     }

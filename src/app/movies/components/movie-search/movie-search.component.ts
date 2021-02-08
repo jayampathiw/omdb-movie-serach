@@ -28,7 +28,9 @@ export class MovieSearchComponent implements OnInit {
   }
 
   search(){
-
+    if(this.searchText){
+      this.movieSearch.emit(this.searchText.nativeElement.value);
+    }
   }
 
 }
