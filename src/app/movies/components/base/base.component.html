@@ -15,6 +15,9 @@
         (selectedImdbEmmiter)="searchByIMDB($event)"
       ></app-movie-details>
     </ng-container>
+    <div class="info" *ngIf="pageLoading">
+      welcome to OMDB Search, search something in the bar above !
+    </div>
   </div>
 </div>
 

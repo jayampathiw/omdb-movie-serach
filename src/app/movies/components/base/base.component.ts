@@ -21,12 +21,16 @@ export class BaseComponent implements OnInit {
 
   selectedMovie: Observable<Movie>;
 
+  pageLoading: boolean = false;
+
   constructor(private movieService: MovieHttpService) { }
 
   ngOnInit(): void {
+    this.pageLoading = true;
   }
 
   movieSearch(searchText: string): void {
+    this.pageLoading = false;
     this.movies = this.movieService.findMovie(searchText)
   }
 

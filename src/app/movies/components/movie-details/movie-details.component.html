@@ -4,20 +4,24 @@
       *ngFor="let movie of movies"
       class="section"
       [ngClass]="{
-        'long-section': selectedMovie && selectedMovie.imdbID == movie.imdbID
+        'long-section long-page-section': selectedMovie && selectedMovie.imdbID == movie.imdbID,
+        'default-section': !(selectedMovie && selectedMovie.imdbID == movie.imdbID)
       }"
     >
       <img [src]="movie.Poster" alt="No Image" />
-      <div class="details">
+      <div class="details" [ngClass]="{
+        'long-details': selectedMovie && selectedMovie.imdbID == movie.imdbID
+      }"
+      >
         <header>
           {{ movie.Title }}
         </header>
         <section *ngIf="selectedMovie && selectedMovie.imdbID == movie.imdbID">
-          <p class="title">Plot</p>
+          <div class="title">Plot</div>
           <p>{{ movie.Plot }}</p>
-          <p class="title">Actors</p>
+          <div class="title">Actors</div>
           <p>{{ movie.Actors }}</p>
-          <p class="title">Rating</p>
+          <div class="title">Rating</div>
           <ul>
             <li *ngFor="let rate of movie.Ratings">
               <p>{{ rate.Source }} {{ rate.Value }}</p>
