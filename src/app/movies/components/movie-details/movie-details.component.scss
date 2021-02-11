@@ -28,14 +28,14 @@
       }
       section {
         @include font-paragraph;
+        .title {
+          @include font-small-title;
+          font-weight: bold;
+          padding-top: 3px;
+        }
         p {
           margin-top: 0;
           margin-bottom: 0;
-          .title {
-            @include font-small-title;
-            font-weight: bold;
-            padding-top: 3px;
-          }
         }
 
         padding: 0 10px 10px 10px;
